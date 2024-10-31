@@ -1,9 +1,9 @@
+// ListaVagas.tsx
+
 import { useState } from 'react'
+import styled from 'styled-components'
 import FormVagas from '../../components/FormVagas'
-
 import Vaga from '../../components/Vaga'
-
-import styles from './ListaVagas.module.css'
 
 type Vaga = {
   id: string
@@ -18,7 +18,7 @@ type Vaga = {
 
 const vagas = [
   {
-    id: 1,
+    id: '1',
     titulo: 'Desenvolvedor front-end',
     localizacao: 'remoto',
     nivel: 'junior',
@@ -28,7 +28,7 @@ const vagas = [
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
   },
   {
-    id: 2,
+    id: '2',
     titulo: 'Desenvolvedor NodeJS',
     localizacao: 'remoto',
     nivel: 'pleno',
@@ -38,7 +38,7 @@ const vagas = [
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
   },
   {
-    id: 3,
+    id: '3',
     titulo: 'Desenvolvedor fullstack',
     localizacao: 'remoto',
     nivel: 'pleno',
@@ -48,7 +48,7 @@ const vagas = [
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
   },
   {
-    id: 4,
+    id: '4',
     titulo: 'Designer de interfaces',
     localizacao: 'remoto',
     nivel: 'junior',
@@ -58,7 +58,7 @@ const vagas = [
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
   },
   {
-    id: 5,
+    id: '5',
     titulo: 'Desenvolvedor front-end',
     localizacao: 'remoto',
     nivel: 'senior',
@@ -68,7 +68,7 @@ const vagas = [
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
   },
   {
-    id: 6,
+    id: '6',
     titulo: 'Desenvolvedor front-end para projeto internacional',
     localizacao: 'remoto',
     nivel: 'senior',
@@ -78,7 +78,7 @@ const vagas = [
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
   },
   {
-    id: 7,
+    id: '7',
     titulo: 'Desenvolvedor front-end',
     localizacao: 'São Paulo/SP',
     nivel: 'junior',
@@ -88,6 +88,18 @@ const vagas = [
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
   }
 ]
+
+const StyledVagas = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-top: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`
 
 const ListaVagas = () => {
   const [filtro, setFiltro] = useState<string>('')
@@ -99,7 +111,7 @@ const ListaVagas = () => {
   return (
     <div>
       <FormVagas aoPesquisar={(termo: string) => setFiltro(termo)} />
-      <ul className={styles.vagas}>
+      <StyledVagas>
         {vagasFiltradas.map((vag) => (
           <Vaga
             key={vag.id}
@@ -112,7 +124,7 @@ const ListaVagas = () => {
             requisitos={vag.requisitos}
           />
         ))}
-      </ul>
+      </StyledVagas>
     </div>
   )
 }

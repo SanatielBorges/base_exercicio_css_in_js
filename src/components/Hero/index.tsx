@@ -15,7 +15,7 @@ const HeroContainer = styled.form`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #2980b9; /* Azul principal */
+    background-color: var(--cor-principal);
     content: '';
     opacity: 0.7;
   }
@@ -26,6 +26,10 @@ const HeroTitle = styled.h2`
   color: #eee;
   font-family: Gloock, serif;
   font-size: 48px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const Hero = () => (

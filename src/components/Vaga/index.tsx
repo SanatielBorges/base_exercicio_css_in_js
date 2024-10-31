@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 const VagaItem = styled.li`
-  border: 1px solid #2980b9; /* Azul principal */
-  background-color: #ecf0f1; /* Azul secundário */
-  color: #2980b9; /* Azul principal */
+  border: 1px solid var(--cor-principal);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-principal);
   padding: 16px;
   transition: all ease 0.3s;
   border-radius: 8px;
 
   &:hover {
-    background-color: #2980b9; /* Azul principal */
-    color: #ecf0f1; /* Azul secundário */
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
   }
 `;
 
@@ -20,9 +20,9 @@ const VagaTitulo = styled.h3`
 `;
 
 const VagaLink = styled.a`
-  border-color: #ecf0f1; /* Azul secundário */
-  background-color: #2980b9; /* Azul principal */
-  color: #ecf0f1; /* Azul secundário */
+  border-color: var(--cor-secundaria);
+  background-color: var(--cor-principal);
+  color: var(--cor-secundaria);
   display: inline-block;
   padding: 8px 16px;
   text-decoration: none;
@@ -36,11 +36,10 @@ const VagaLink = styled.a`
     display: block;
   }
 
-  /* Alterar estilo ao passar o mouse */
   ${VagaItem}:hover & {
-    border-color: #2980b9; /* Azul principal */
-    background-color: #ecf0f1; /* Azul secundário */
-    color: #2980b9; /* Azul principal */
+    border-color: var(--cor-principal);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
   }
 `;
 

@@ -8,29 +8,41 @@ type Props = {
 const Formulario = styled.form`
   display: grid;
   grid-template-columns: 1fr auto;
-  background-color: #2c3e50; /* Cor azul marinho */
+  background-color: var(--cor-secundaria);
   padding: 32px;
   border-radius: 12px;
   margin-top: 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
 `;
 
 const Campo = styled.input`
   padding: 0 16px;
-  outline-color: #2980b9; /* Azul mais claro para o foco */
+  outline-color: var(--cor-principal);
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const BotaoPesquisar = styled.button`
-  background-color: #2980b9; /* Azul mais claro */
-  border: 1px solid #2980b9; /* Azul mais claro */
+  background-color: var(--cor-principal);
+  border: 1px solid var(--cor-principal);
   height: 40px;
   padding: 0 16px;
   font-size: 18px;
-  color: #fff; /* Branco para o texto */
-  margin-left: 8px;
+  color: var(--cor-secundaria);
   cursor: pointer;
+  margin-left: 8px;
 
   &:hover {
-    background-color: #3498db; /* Um tom mais claro de azul ao passar o mouse */
+    background-color: #b38185;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
   }
 `;
 
